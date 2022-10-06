@@ -1,0 +1,20 @@
+{
+  "files": {
+    "2p/3stack/zeeAlso/stack6es4stu.js": [
+      {
+        "id": "eb539c52-2999-474d-9e51-39ce3a54a13d",
+        "line": 7,
+        "version": 2,
+        "index": 43
+      }
+    ],
+    "fib.js": [
+      {
+        "id": "9a26d009-54db-4ed9-a0b6-587c1b77c362",
+        "line": 1,
+        "version": 266,
+        "index": 0
+      }
+    ]
+  }
+}
