@@ -84,4 +84,4 @@ prueba.salida()
 prueba.salida()
 prueba.salida()
 
-//Prueba
+console.log("hola mundo")
