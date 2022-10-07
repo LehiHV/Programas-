@@ -20,12 +20,13 @@ function pila() {
   this.salida = salida
   this.mostrar = mostrar
   this.busqueda = busqueda
+  this.peek= peek
 }
 function entrada(element) {
   if (this.llena()) {
     console.log("Tu pila esta llena, debes eliminar elementos")
   } else {
-    this.Tamaño_Pila.unshift(element)
+    this.Tamaño_Pila.push(element)
   }
 }
 
@@ -50,6 +51,9 @@ function vacia() {
     return true
   else
     return false
+}
+function peek() {
+  return this.Tamaño_Pila[this.max - 1]
 }
 
 function mostrar() {
