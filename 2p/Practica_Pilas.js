@@ -21,7 +21,7 @@ function salida() {
     console.log("Tu pila esta vacia, debes introducir elementos")
   }
   else {
-    this.Tamaño_Pila.shift()
+    return this.Tamaño_Pila.shift()
   }
 }
 
@@ -56,20 +56,20 @@ function ord_pila(x) {
   let s = new pila(x);
 
   let i = 1;
-  p.entrada(Math.floor(Math.random() * (x - 1) + 1))
+  n = Math.floor(Math.random() * (x - 1) + 1)
+  p.entrada(n)
   while (i <= x - 1) {
     r = Math.floor(Math.random() * (x - 1) + 1)
-    if (r > p.peek()) {
+    if (p.peek() > r) {
       p.entrada(r)
     } else {
-      s.entrada(r)
-      s.entrada(p.peek())
+      s.entrada(p.salida())
     }
     i++
   }
-
   console.log(p.mostrar())
   console.log(s.mostrar())
+
 }
 ord_pila(10)
 console.log("Fin")

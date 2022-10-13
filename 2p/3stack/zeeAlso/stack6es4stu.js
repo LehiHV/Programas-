@@ -50,7 +50,13 @@ class Stack {
   search(k) { }
   traverse() { }
 
-  toString() { }
+  toString() {
+    let show = ""
+    for (let i = 0; i < this.data.length; ++i) {
+      show += this.data + "\n"
+    }
+    return show
+  }
   makeEmpty() {
     this.data = []
   }
@@ -65,7 +71,7 @@ s.push(2)
 s.push(1)
 s.push(5)
 console.log('size', s.size())
-
+console.log(s.toString())
 console.log(s.peek())
 s.pop()
 console.log(s.peek())
