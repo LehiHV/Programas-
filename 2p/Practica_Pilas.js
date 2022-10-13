@@ -63,22 +63,26 @@ function busqueda(x) {
 }
 
 function peek() {
-  return this.Tamaño_Pila[this.max - 1]
+  return this.Tamaño_Pila[this.max - (this.max - 1)]
 }
 
 function ord_pila(x) {
   let p = new pila(x);
   let s = new pila(x);
-  while(i==x){
-    n=Math.floor(Math.random() * (10 - 1 + 1))
-    if(n>p.peek()){
-      p.entrada(n)
-    }else{
-      s.entrada(p.salida())
+  i = 1
+  while (i == x) {
+    n = Math.floor(Math.random() * (10 - 1 + 1))
+    p.entrada(n)
+    if (n < p.peek()) {
+      p.salida()
+      s.entrada(n)
     }
   }
-  console.log(p.mostrar());
+  i++
+  console.log(p.mostrar())
 }
 ord_pila(10)
-console.log("Otra pila")
-ord_pila(100)
+console.log("Fin")
+
+//p.peek() =x  2peek()=n
+// if( p.peek()>n)
