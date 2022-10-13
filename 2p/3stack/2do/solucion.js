@@ -20,6 +20,7 @@ function pila() {
   this.salida = salida
   this.mostrar = mostrar
   this.busqueda = busqueda
+  this.peek = peek
 }
 function entrada(element) {
   if (this.llena()) {
@@ -34,7 +35,7 @@ function salida() {
     console.log("Tu pila esta vacia, debes introducit elementos")
   }
   else {
-    this.Tamaño_Pila.pop()
+    this.Tamaño_Pila.shift()
   }
 }
 
@@ -74,12 +75,18 @@ function busqueda(x) {
   }
 }
 
+function peek() {
+  return this.Tamaño_Pila[this.Tamaño_Pila.length - this.Tamaño_Pila.length]
+}
+
 let prueba = new pila();
 
 prueba.entrada(1)
 prueba.entrada(4)
-prueba.entrada(2)
 prueba.entrada(5)
-prueba.entrada(3)
 console.log(prueba.mostrar())
-console.log(prueba.busqueda(2))
+console.log("Muestrame la posicion actual->" + prueba.peek())
+prueba.salida()
+prueba.salida()
+console.log(prueba.mostrar())
+console.log("Muestrame la posicion actual->" + prueba.peek())

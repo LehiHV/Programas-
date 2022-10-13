@@ -6,7 +6,6 @@ function pila(maximo) {
   this.entrada = entrada
   this.salida = salida
   this.mostrar = mostrar
-  this.busqueda = busqueda
   this.peek = peek
 }
 function entrada(element) {
@@ -19,7 +18,7 @@ function entrada(element) {
 
 function salida() {
   if (this.vacia()) {
-    console.log("Tu pila esta vacia, debes introducit elementos")
+    console.log("Tu pila esta vacia, debes introducir elementos")
   }
   else {
     this.Tamaño_Pila.shift()
@@ -48,38 +47,29 @@ function mostrar() {
   return show
 }
 
-function busqueda(x) {
-  let enc;
-  for (let i = 0; i < this.Tamaño_Pila.length; i++) {
-    if (this.Tamaño_Pila[i] == x) {
-      enc = this.Tamaño_Pila[i]
-    }
-  }
-  if (enc != "") {
-    return "Se encontro el valor: " + x + " en la posicion: " + (enc + 1)
-  } else {
-    return "No se encontro el valor: " + x + ", Su posicion es -1"
-  }
-}
-
 function peek() {
-  return this.Tamaño_Pila[this.max - (this.max - 1)]
+  return this.Tamaño_Pila[this.Tamaño_Pila.length - this.Tamaño_Pila.length]
 }
 
 function ord_pila(x) {
   let p = new pila(x);
   let s = new pila(x);
-  i = 1
-  while (i == x) {
-    n = Math.floor(Math.random() * (10 - 1 + 1))
-    p.entrada(n)
-    if (n < p.peek()) {
-      p.salida()
-      s.entrada(n)
+
+  let i = 1;
+  p.entrada(Math.floor(Math.random() * (x - 1) + 1))
+  while (i <= x - 1) {
+    r = Math.floor(Math.random() * (x - 1) + 1)
+    if (r > p.peek()) {
+      p.entrada(r)
+    } else {
+      s.entrada(r)
+      s.entrada(p.peek())
     }
+    i++
   }
-  i++
+
   console.log(p.mostrar())
+  console.log(s.mostrar())
 }
 ord_pila(10)
 console.log("Fin")

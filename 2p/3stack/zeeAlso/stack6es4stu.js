@@ -68,6 +68,7 @@ console.log('size', s.size())
 
 console.log(s.peek())
 s.pop()
+console.log(s.peek())
 s.pop()
 s.pop()
 s.pop()
