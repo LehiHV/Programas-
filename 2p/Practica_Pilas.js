@@ -54,16 +54,16 @@ function peek() {
 function ord_pila(x) {
   let p = new pila(x);
   let s = new pila(x);
-
+  let n, r;
   let i = 1;
   n = Math.floor(Math.random() * (x - 1) + 1)
   p.entrada(n)
   while (i <= x - 1) {
     r = Math.floor(Math.random() * (x - 1) + 1)
-    if (p.peek() > r) {
-      p.entrada(r)
-    } else {
+    if (r > p.peek()) {
       s.entrada(p.salida())
+    } else {
+      p.entrada(r)
     }
     i++
   }
