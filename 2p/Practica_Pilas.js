@@ -60,16 +60,21 @@ function ord_pila(x) {
   p.entrada(n)
   while (i <= x - 1) {
     r = Math.floor(Math.random() * (x - 1) + 1)
-    if (r > p.peek()) {
-      s.entrada(p.salida())
-    } else {
-      p.entrada(r)
-    }
+    do {
+      if (r > p.peek()) {
+        s.entrada(p.salida())
+        p.entrada(r)
+      }
+    } while (p.peek() === r)
+    do {
+      if (r === p.peek()) {
+        p.entrada(s.salida())
+      }
+    } while (s.peek() === 0)
     i++
   }
   console.log(p.mostrar())
   console.log(s.mostrar())
-
 }
 ord_pila(10)
 console.log("Fin")
