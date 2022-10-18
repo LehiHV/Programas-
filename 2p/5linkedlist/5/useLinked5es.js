@@ -2,7 +2,10 @@
 // imports ES5
 // linked5es2do
 //
-
+function Node(data) {//constructor
+  this.data = data
+  this.next = null
+}
 //first
 let n1 = new Node('a')
 let n2 = new Node('b')

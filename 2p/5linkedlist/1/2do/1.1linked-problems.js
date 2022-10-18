@@ -29,3 +29,21 @@
  * @see {@link https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array}
  * @see {@link https://jsdoc.app}
  */
+import Linked from '../../5/linked5es.js'
+function obj(data) {//constructor
+  this.data = data
+  this.next = null
+}
+let n1 = new obj('a')
+let n2 = new obj('b')
+
+let l = new Linked(n1)
+l.prepend(n2)
+l.append(new obj('c'))
+l.prepend(new obj('d'))
+l.traverse(l.getHead())
+//probar el contain
+l.contains('a')
+l.contains('z')
+//Obtener la cola
+console.log(l.getTail())

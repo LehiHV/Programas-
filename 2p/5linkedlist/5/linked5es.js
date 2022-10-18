@@ -1,9 +1,10 @@
+
 //
 // imports ES5
 // Node5es (data)
 //
 
-function Linked(n) {//node
+export default function Linked(n) {//node
   this.head = n//node
   this.tail = n//node
   this.size = 1
@@ -13,27 +14,27 @@ function Linked(n) {//node
   this.append = append
   this.traverse = traverse
   this.contains = contains
-  //this.contains = contains
+  this.getTail = getTail
 }
 
-function getHead() {
+export function getHead() {
   return this.head
 }
 
-function prepend(n) {//new node
+export function prepend(n) {//new node
   n.next = this.head
   this.head = n
   this.size++
 }
 
-function append(n) {//new node
+export function append(n) {//new node
   n.next = null//
   this.tail.next = n
   this.tail = n
   this.size++
 }
 
-function traverse() {
+export function traverse() {
   let c = this.head
   while (c) {//exists
     //console.log(c.key)
@@ -46,19 +47,27 @@ function traverse() {
 //
 // exercises
 //
-function contains(v) {
+export function contains(v) {
   let c = this.head
-  let enc;
+  let enc = "";
   while (c) {//exists
-    if (v === c.next) {
+    if (v == c.data) {
       enc = c.data
     }
     c = c.next
   }
-  if (enc != "") {
-    return enc
+  if (enc == v) {
+    console.log(enc)
   } else {
-    return "no encotrado"
+    console.log("no encotrado")
   }
 }
-function getTail() { }
+export function getTail() {
+  let c = this.head
+  var t = ""
+  while (c) {
+    t = c.data
+    c = c.next
+  }
+  return t
+}
