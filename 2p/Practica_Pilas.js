@@ -8,6 +8,7 @@ function pila(maximo) {
   this.mostrar = mostrar
   this.peek = peek
 }
+
 function entrada(element) {
   if (this.llena()) {
     console.log("Tu pila esta llena, debes eliminar elementos")
@@ -48,7 +49,7 @@ function mostrar() {
 }
 
 function peek() {
-  return this.Tamaño_Pila[this.Tamaño_Pila.length - this.Tamaño_Pila.length]
+  return this.Tamaño_Pila[0]
 }
 
 function ord_pila(x) {
@@ -58,26 +59,28 @@ function ord_pila(x) {
   let i = 1;
   n = Math.floor(Math.random() * (x - 1) + 1)
   p.entrada(n)
-  while (i <= x - 1) {
+  while (i < x) {
+    while (s.vacia() != true) {
+      p.entrada(s.salida())
+    }
     r = Math.floor(Math.random() * (x - 1) + 1)
-    do {
-      if (r > p.peek()) {
-        s.entrada(p.salida())
-        p.entrada(r)
-      }
-    } while (p.peek() === r)
-    do {
-      if (r === p.peek()) {
-        p.entrada(s.salida())
-      }
-    } while (s.peek() === 0)
+    while (r <= p.peek() && p.vacia() != true) {
+      s.entrada(p.salida())
+    }
+    if (r >= p.peek() || p.vacia()) {
+      p.entrada(r)
+    }
     i++
+  }
+  while (!s.vacia()) {
+    p.entrada(s.salida())
   }
   console.log(p.mostrar())
   console.log(s.mostrar())
 }
 ord_pila(10)
-console.log("Fin")
-
-//p.peek() =x  2peek()=n
-// if( p.peek()>n)
+console.log("----Primeros 10----")
+ord_pila(100)
+console.log("----Primeros 100----")
+ord_pila(1000)
+console.log("----Primeros 1000----")

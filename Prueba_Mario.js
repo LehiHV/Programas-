@@ -1,27 +1,31 @@
-var stack = [];
+function ord_fila(x) {
+  let p = new fila(x);
+  let s = new fila(x);
+  let n, r;
+  let i = 1;
+  n = Math.floor(Math.random() * (x - 1) + 1)
+  p.entrada(n)
+  while (i < x) {
+    if (p.vacia() && s.vacia()) {
+      return p.entrada(r)
+    }
+    while (!p.vacia()) {
+      s.entrada(p.salida())
+    }
+    while (r > s.peek()) {
+      p.entrada(s.salida())
+    }
+    if (s.vacia()) {
+      p.entrada(r)
+    }
+    if (r <= s.peek()) {
+      p.entrada(r)
 
-for (i = 0; i <= 10; i++) {
-  stack[i] = Math.floor(Math.random() * (10 - 1) + 1)
-}
-console.log(stack)
-function sortStack(s) {
-  if (s.length > 0) {
-    var t = s.pop();
-    sortStack(s);
-    sortedInsert(s, t);
+    }
+    while (!s.vacia()) {
+      p.entrada(s.salida())
+    }
+    console.log(p.Tamaño_Fila)
+    console.log(s.Tamaño_Fila)
   }
 }
-
-function sortedInsert(s, e) {
-  if (s.length == 0 || e > s[s.length - 1]) {
-    s.push(e);
-  } else {
-    var x = s.pop();
-    sortedInsert(s, e);
-    s.push(x);
-  }
-}
-
-sortStack(stack);
-
-console.log(stack);
