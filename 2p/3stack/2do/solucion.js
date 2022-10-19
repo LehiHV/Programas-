@@ -65,15 +65,16 @@ function busqueda(x) {
   let enc;
   for (let i = 0; i < this.Tamaño_Pila.length; i++) {
     if (this.Tamaño_Pila[i] == x) {
-      enc = this.Tamaño_Pila[i]
+      enc = i
     }
   }
-  if (enc != "") {
-    return "Se encontro el valor: " + x + " en la posicion: " + (enc + 1)
+  if (enc >= 0) {
+    return "Se encontro el valor: " + x + " en la posicion: " + (enc)
   } else {
     return "No se encontro el valor: " + x + ", Su posicion es -1"
   }
 }
+
 
 function peek() {
   return this.Tamaño_Pila[this.Tamaño_Pila.length - this.Tamaño_Pila.length]
@@ -85,8 +86,4 @@ prueba.entrada(1)
 prueba.entrada(4)
 prueba.entrada(5)
 console.log(prueba.mostrar())
-console.log("Muestrame la posicion actual->" + prueba.peek())
-prueba.salida()
-prueba.salida()
-console.log(prueba.mostrar())
-console.log("Muestrame la posicion actual->" + prueba.peek())
+console.log(prueba.busqueda(2))

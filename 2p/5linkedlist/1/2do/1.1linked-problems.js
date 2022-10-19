@@ -30,17 +30,17 @@
  * @see {@link https://jsdoc.app}
  */
 import Linked from '../../5/linked5es.js'
-function obj(data) {//constructor
+function Node(data) {//constructor
   this.data = data
   this.next = null
 }
-let n1 = new obj('a')
-let n2 = new obj('b')
+let n1 = new Node('a')
+let n2 = new Node('b')
 
 let l = new Linked(n1)
 l.prepend(n2)
-l.append(new obj('c'))
-l.prepend(new obj('d'))
+l.append(new Node('c'))
+l.prepend(new Node('d'))
 l.traverse(l.getHead())
 //probar el contain
 l.contains('a')
