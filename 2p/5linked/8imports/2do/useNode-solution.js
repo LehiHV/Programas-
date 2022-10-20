@@ -15,5 +15,5 @@ l.traverse(l.getHead())
 //l.InsertAfter('b',new Node ('f'))
 //l.traverse(l.getHead())
 
-l.InsertBefore('b',new Node('e'))
+l.InsertBefore('a',new Node('e'))
 l.traverse(l.getHead())

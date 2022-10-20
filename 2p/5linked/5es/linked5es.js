@@ -88,17 +88,17 @@ function InsertBefore(v,o){
   let c = this.head
   let aux,prev
     if(c.next==null){
-      prepend(o)
+      this.prepend(o)
     }else{
       while (c) {//exists
-      if (v != c.data) {
+      if (v != c.data && c.next!=null) {
         prev=c.next;
-      }else{
-        aux=prev
-    prev=o
-    o.next=aux
       }
       c = c.next
     }
+    }
+  while (c) {
+    console.log(prev)
+    c=c.next
   }
 }
