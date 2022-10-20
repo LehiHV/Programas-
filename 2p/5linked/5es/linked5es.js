@@ -16,8 +16,8 @@ export default function Linked(n) {//node
   this.traverse = traverse
   this.contains = contains
   this.getTail = getTail
-  this.InsertAfter=InsertAfter
-  this.InsertBefore=InsertBefore
+  this.InsertAfter = InsertAfter
+  this.InsertBefore = InsertBefore
 }
 
 
@@ -55,12 +55,12 @@ function contains(v) {
   let enc = false;
   while (c) {//exists
     if (v == c.data) {
-      enc=true
+      enc = true
     }
     c = c.next
   }
   return enc
-  
+
 }
 function getTail() {
   let c = this.head
@@ -71,34 +71,38 @@ function getTail() {
   }
   return t
 }
-
-function InsertAfter(v,o){
+//Metodos nuevos
+function InsertAfter(v, o) {
   let c = this.head
   let aux;
   while (c) {//exists
     if (v == c.data) {
-      aux=c.next
-      c.next=o
-      o.next=aux
+      aux = c.next
+      c.next = o
+      o.next = aux
     }
     c = c.next
   }
 }
-function InsertBefore(v,o){
+function InsertBefore(v, o) {
   let c = this.head
-  let aux,prev
-    if(c.next==null){
-      this.prepend(o)
-    }else{
+  let prev, aux
+  if (c.next == null) {
+    this.prepend(o)
+  } else {
+    if (v != this.head.data) {
       while (c) {//exists
-      if (v != c.data && c.next!=null) {
-        prev=c.next;
+        if (v != c.data) {
+          prev = c
+        } else {
+          aux = prev.next
+          prev.next = o
+          o.next = aux
+        }
+        c = c.next
       }
-      c = c.next
+    } else {
+      this.prepend(o)
     }
-    }
-  while (c) {
-    console.log(prev)
-    c=c.next
   }
 }

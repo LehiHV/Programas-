@@ -7,9 +7,7 @@ function fila(maximo) {
   this.llena = llena
   this.vacia = vacia
   this.entrada = entrada
-  this.entradaSort = entradaSort
   this.salida = salida
-  this.salidaSort = salidaSort
   this.mostrar = mostrar
   this.peek = peek
 }
@@ -22,22 +20,6 @@ function entrada(element) {
 }
 
 function salida() {
-  if (this.vacia()) {
-    console.log("Tu fila esta vacia, debes introducir elementos")
-  }
-  else {
-    return this.Tamaño_Fila.shift()
-  }
-}
-function entradaSort(element) {
-  if (this.llena()) {
-    console.log("Tu fila esta llena, debes eliminar elementos")
-  } else {
-    this.Tamaño_Fila.push(element)
-  }
-}
-
-function salidaSort() {
   if (this.vacia()) {
     console.log("Tu fila esta vacia, debes introducir elementos")
   }
