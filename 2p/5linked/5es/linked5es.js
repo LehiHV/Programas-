@@ -8,6 +8,7 @@ export default function Linked(n) {//node
   this.head = n//node
   this.tail = n//node
   this.size = 1
+  this.prev = ""
 
   this.getHead = getHead
   this.prepend = prepend
@@ -15,26 +16,28 @@ export default function Linked(n) {//node
   this.traverse = traverse
   this.contains = contains
   this.getTail = getTail
+  this.InsertAfter=InsertAfter
+  this.InsertBefore=InsertBefore
 }
 
-export function getHead() {
+
+function getHead() {
   return this.head
 }
-
-export function prepend(n) {//new node
+function prepend(n) {//new node
   n.next = this.head
   this.head = n
   this.size++
 }
 
-export function append(n) {//new node
+function append(n) {//new node
   n.next = null//
   this.tail.next = n
   this.tail = n
   this.size++
 }
 
-export function traverse() {
+function traverse() {
   let c = this.head
   while (c) {//exists
     //console.log(c.key)
@@ -47,22 +50,19 @@ export function traverse() {
 //
 // exercises
 //
-export function contains(v) {
+function contains(v) {
   let c = this.head
-  let enc = "";
+  let enc = false;
   while (c) {//exists
     if (v == c.data) {
-      enc = c.data
+      enc=true
     }
     c = c.next
   }
-  if (enc == v) {
-    console.log(enc)
-  } else {
-    console.log("no encotrado")
-  }
+  return enc
+  
 }
-export function getTail() {
+function getTail() {
   let c = this.head
   var t = ""
   while (c) {
@@ -70,4 +70,35 @@ export function getTail() {
     c = c.next
   }
   return t
+}
+
+function InsertAfter(v,o){
+  let c = this.head
+  let aux;
+  while (c) {//exists
+    if (v == c.data) {
+      aux=c.next
+      c.next=o
+      o.next=aux
+    }
+    c = c.next
+  }
+}
+function InsertBefore(v,o){
+  let c = this.head
+  let aux,prev
+    if(c.next==null){
+      prepend(o)
+    }else{
+      while (c) {//exists
+      if (v != c.data) {
+        prev=c.next;
+      }else{
+        aux=prev
+    prev=o
+    o.next=aux
+      }
+      c = c.next
+    }
+  }
 }
