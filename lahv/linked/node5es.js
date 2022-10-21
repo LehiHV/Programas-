@@ -1,10 +1,6 @@
+export { Linked, Node }
 
-//
-// imports ES5
-// Node5es (data)
-//
-
-export default function Linked(n) {//node
+function Linked(n) {//node
   this.head = n//node
   this.tail = n//node
   this.size = 1
@@ -105,3 +101,4 @@ function InsertBefore(v, o) {
     }
   }
 }
+import Node from './node.js'

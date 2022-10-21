@@ -1,8 +1,4 @@
-import Linked from '../../5/linked5es.js'
-function Node(data) {//constructor
-  this.data = data
-  this.next = null
-}
+import { Linked, Node } from '../../../../lahv/linked/node5es.js'
 let n1 = new Node('a')
 let n2 = new Node('b')
 
@@ -12,7 +8,7 @@ l.append(new Node('c'))
 l.prepend(new Node('d'))
 l.traverse(l.getHead())
 //probar el contain
-l.contains('a')
-l.contains('z')
+console.log(l.contains('a'))
+console.log(l.contains('z'))
 //Obtener la cola
 console.log(l.getTail())
