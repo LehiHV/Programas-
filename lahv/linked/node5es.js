@@ -1,5 +1,5 @@
 export { Linked, Node }
-
+import Node from './node.js'
 function Linked(n) {//node
   this.head = n//node
   this.tail = n//node
@@ -13,33 +13,30 @@ function Linked(n) {//node
   this.getTail = getTail
   this.InsertAfter = InsertAfter
   this.InsertBefore = InsertBefore
-}
 
-
-function getHead() {
-  return this.head
-}
-function prepend(n) {//new node
-  n.next = this.head
-  this.head = n
-  this.size++
-}
-
-function append(n) {//new node
-  n.next = null//
-  this.tail.next = n
-  this.tail = n
-  this.size++
-}
-
-function traverse() {
-  let c = this.head
-  while (c) {//exists
-    //console.log(c.key)
-    console.log(c.data)
-    c = c.next
+  function getHead() { return this.head }
+  function prepend(n) {//new node
+    n.next = this.head
+    this.head = n
+    this.size++
   }
-  console.log('\n')
+
+  function append(n) {//new node
+    n.next = null//
+    this.tail.next = n
+    this.tail = n
+    this.size++
+  }
+
+  function traverse() {
+    let c = this.head
+    while (c) {//exists
+      //console.log(c.key)
+      console.log(c.data)
+      c = c.next
+    }
+    console.log('\n')
+  }
 }
 
 //
@@ -101,4 +98,3 @@ function InsertBefore(v, o) {
     }
   }
 }
-import Node from './node.js'
