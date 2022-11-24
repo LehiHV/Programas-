@@ -12,15 +12,15 @@ function preorder(n) {
 }
 function inorder(n) {
   if (n) {
-    preorder(n.l)
+    inorder(n.l)
     console.log(n.d)
-    preorder(n.r)
+    inorder(n.r)
   }
 }
 function posorder(n) {
   if (n) {
-    preorder(n.l)
-    preorder(n.r)
+    posorder(n.l)
+    posorder(n.r)
     console.log(n.d)
   }
 }
@@ -28,21 +28,21 @@ function posorder(n) {
 function preorder2(n) {
   if (n) {
     console.log(n.d)
-    preorder(n.r)
-    preorder(n.l)
+    preorder2(n.r)
+    preorder2(n.l)
   }
 }
 function inorder2(n) {
   if (n) {
-    preorder(n.r)
+    inorder2(n.r)
     console.log(n.d)
-    preorder(n.l)
+    inorder2(n.l)
   }
 }
 function posorder2(n) {
   if (n) {
-    preorder(n.r)
-    preorder(n.l)
+    posorder2(n.r)
+    posorder2(n.l)
     console.log(n.d)
   }
 }
