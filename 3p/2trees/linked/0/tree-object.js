@@ -3,7 +3,7 @@ export default
 binary tree
 */
 
-let root = {
+root = {
   d: '+',
   l: null,//eft
   r: null//ight
