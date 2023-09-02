@@ -1,3 +1,9 @@
+//Cortés López Alejandra Guadalupe 
+//Hernández Velasco Lehi Alejandro
+//Solís Ochoa Luis Daniel
+//Trujillo Rivera Javier Alejandro
+//Velador Jiménez Laura Daniela
+
 export { Hoja, Arbol }
 function Arbol() {
   this.Insert = Insert,
@@ -24,10 +30,10 @@ function Insert(t, r, b) {
         t.Left = b
       } else if (t.Right === null) {
         t.Right = b
-      }else{
+      } else {
         console.log("No se pueden introducir mas valores")
       }
-    }else{
+    } else {
       Insert(t.Left, r, b)
       Insert(t.Right, r, b)
     }
@@ -39,19 +45,19 @@ function remove(x, n) {
       x.Left = null
       x.Right = null
       x.root = null
-    }else{
+    } else {
       remove(x.Left, n)
-    remove(x.Right, n)
+      remove(x.Right, n)
     }
   }
 }
 function search(x, n) {
   if (x !== null) {
     if (x.root === n) {
-      console.log('Se encontro la hoja: '+ x.root)
-    }else{
-    search(x.Left, n)
-    search(x.Right, n)
+      console.log('Se encontro la hoja: ' + x.root)
+    } else {
+      search(x.Left, n)
+      search(x.Right, n)
     }
   }
 }

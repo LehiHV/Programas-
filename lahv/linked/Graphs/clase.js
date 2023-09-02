@@ -1,4 +1,9 @@
 
+//Cortés López Alejandra Guadalupe 
+//Hernández Velasco Lehi Alejandro
+//Solís Ochoa Luis Daniel
+//Trujillo Rivera Javier Alejandro
+//Velador Jiménez Laura Daniela
 export { grafo }
 function grafo(v) {
   this.vertice = v;

@@ -1,3 +1,9 @@
+//Cortés López Alejandra Guadalupe 
+//Hernández Velasco Lehi Alejandro
+//Solís Ochoa Luis Daniel
+//Trujillo Rivera Javier Alejandro
+//Velador Jiménez Laura Daniela
+
 export { Hoja, Arbol }
 function Arbol() {
   this.Insert = Insert,

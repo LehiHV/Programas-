@@ -1,3 +1,8 @@
+//Cortés López Alejandra Guadalupe 
+//Hernández Velasco Lehi Alejandro
+//Solís Ochoa Luis Daniel
+//Trujillo Rivera Javier Alejandro
+//Velador Jiménez Laura Daniela
 //
 // your solution here
 //
